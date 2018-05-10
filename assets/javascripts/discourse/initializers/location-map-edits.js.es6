@@ -7,7 +7,7 @@ export default {
     withPluginApi('0.8.12', api => {
 
       if (siteSettings.location_hamburger_menu_map_link) {
-        api.decorateWidget('hamburger-menu:generalLinks', helper => {
+        api.decorateWidget('hamburger-menu:generalLinks', () => {
           return {
             route: 'discovery.map',
             className: 'map-link',
