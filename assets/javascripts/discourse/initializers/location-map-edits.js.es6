@@ -5,6 +5,17 @@ export default {
   name:'location-map-renderer',
   initialize(){
     withPluginApi('0.8.12', api => {
+
+      if (siteSettings.locationss_hamburger_menu_map_link) {
+        api.decorateWidget('hamburger-menu:generalLinks', helper => {
+          return {
+            route: 'discovery.map',
+            className: 'map-link',
+            label: 'filters.map.title'
+          }
+        })
+      }
+
       api.modifyClass('route:users', {
         refreshQueryWithoutTransition: false,
 
