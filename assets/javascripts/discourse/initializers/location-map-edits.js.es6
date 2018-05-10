@@ -46,8 +46,8 @@ export default {
           }
         }
       });
-      
-      if (Discourse.siteSettings.location_hamburger_menu_map_link) {
+
+      if (Discourse.SiteSettings.location_hamburger_menu_map_link) {
         api.decorateWidget('hamburger-menu:generalLinks', () => {
           return {
             route: 'discovery.map',
