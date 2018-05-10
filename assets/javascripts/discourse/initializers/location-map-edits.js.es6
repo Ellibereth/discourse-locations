@@ -6,16 +6,6 @@ export default {
   initialize(){
     withPluginApi('0.8.12', api => {
 
-      if (Discourse.siteSettings.location_hamburger_menu_map_link) {
-        api.decorateWidget('hamburger-menu:generalLinks', () => {
-          return {
-            route: 'discovery.map',
-            className: 'map-link',
-            label: 'filters.map.title'
-          }
-        })
-      }
-
       api.modifyClass('route:users', {
         refreshQueryWithoutTransition: false,
 
@@ -56,6 +46,17 @@ export default {
           }
         }
       });
+      
+      if (Discourse.siteSettings.location_hamburger_menu_map_link) {
+        api.decorateWidget('hamburger-menu:generalLinks', () => {
+          return {
+            route: 'discovery.map',
+            className: 'map-link',
+            label: 'filters.map.title'
+          }
+        })
+      }
+
     });
   }
 };
