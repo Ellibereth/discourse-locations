@@ -5,6 +5,17 @@ export default {
   name:'location-map-renderer',
   initialize(){
     withPluginApi('0.8.12', api => {
+
+      if (siteSettings.events_hamburger_menu_calendar_link) {
+        api.decorateWidget('hamburger-menu:generalLinks', helper => {
+          return {
+            route: 'discovery.calendar',
+            className: 'calendar-link',
+            label: 'filters.calendar.title'
+          }
+        })
+      }
+      
       api.modifyClass('route:users', {
         refreshQueryWithoutTransition: false,
 
@@ -45,14 +56,6 @@ export default {
           }
         }
       });
-      if (siteSettings.location_hamburger_menu_map_link) {
-        api.decorateWidget('hamburger-menu:generalLinks', helper => {
-          return {
-            route: 'discovery.map',
-            className: 'map-link',
-            label: 'filters.map.title'
-          }
-        })
     });
   }
 };
