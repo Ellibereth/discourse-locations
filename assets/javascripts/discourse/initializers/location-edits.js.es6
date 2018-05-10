@@ -164,5 +164,16 @@ export default {
         }
       });
     });
+
+    if (siteSettings.location_hamburger_menu_map_link) {
+      api.decorateWidget('hamburger-menu:generalLinks', helper => {
+        return {
+          route: 'discovery.map',
+          className: 'map-link',
+          label: 'filters.map.title'
+        }
+      })
+    }
+
   }
 };
