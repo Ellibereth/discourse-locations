@@ -151,7 +151,7 @@ after_initialize do
                                ON topic_custom_fields.topic_id = topics.id
                                AND topic_custom_fields.name = 'has_geo_location'")
 
-        Locations::Maps.sorted_list_filters.each do |filter|
+        Locations::Map.sorted_list_filters.each do |filter|
           topics = filter[:block].call(topics, @options)
         end
 
@@ -160,7 +160,7 @@ after_initialize do
     end
   end
 
-  Locations::Maps.add_list_filter do |topics, options|
+  Locations::Map.add_list_filter do |topics, options|
     if options[:category_id]
       category = Category.find(options[:category_id])
     end
