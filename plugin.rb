@@ -13,10 +13,10 @@ register_asset 'lib/leaflet/leaflet.markercluster.js'
 register_asset 'lib/leaflet/MarkerCluster.css'
 register_asset 'lib/leaflet/MarkerCluster.Default.css'
 
-Discourse.top_menu_items.push(:maps)
-Discourse.anonymous_top_menu_items.push(:maps)
-Discourse.filters.push(:maps)
-Discourse.anonymous_filters.push(:maps)
+Discourse.top_menu_items.push(:map)
+Discourse.anonymous_top_menu_items.push(:map)
+Discourse.filters.push(:map)
+Discourse.anonymous_filters.push(:map)
 
 gem 'geocoder', '1.4.4'
 
@@ -146,7 +146,7 @@ after_initialize do
   class ::TopicQuery
     def list_map
       @options[:per_page] = SiteSetting.location_map_max_topics
-      create_list(:maps) do |topics|
+      create_list(:map) do |topics|
         topics = topics.joins("INNER JOIN topic_custom_fields
                                ON topic_custom_fields.topic_id = topics.id
                                AND topic_custom_fields.name = 'has_geo_location'")
