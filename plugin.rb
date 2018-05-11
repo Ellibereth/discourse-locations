@@ -13,10 +13,10 @@ register_asset 'lib/leaflet/leaflet.markercluster.js'
 register_asset 'lib/leaflet/MarkerCluster.css'
 register_asset 'lib/leaflet/MarkerCluster.Default.css'
 
-Discourse.top_menu_items.push(:map)
-Discourse.anonymous_top_menu_items.push(:map)
-Discourse.filters.push(:map)
-Discourse.anonymous_filters.push(:map)
+Discourse.top_menu_items.push(:maps)
+Discourse.anonymous_top_menu_items.push(:maps)
+Discourse.filters.push(:maps)
+Discourse.anonymous_filters.push(:maps)
 
 gem 'geocoder', '1.4.4'
 
@@ -151,7 +151,7 @@ after_initialize do
                                ON topic_custom_fields.topic_id = topics.id
                                AND topic_custom_fields.name = 'has_geo_location'")
 
-        Locations::Map.sorted_list_filters.each do |filter|
+        Locations::Maps.sorted_list_filters.each do |filter|
           topics = filter[:block].call(topics, @options)
         end
 
@@ -160,7 +160,7 @@ after_initialize do
     end
   end
 
-  Locations::Map.add_list_filter do |topics, options|
+  Locations::Maps.add_list_filter do |topics, options|
     if options[:category_id]
       category = Category.find(options[:category_id])
     end
