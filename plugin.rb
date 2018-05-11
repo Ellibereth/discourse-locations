@@ -146,7 +146,7 @@ after_initialize do
   class ::TopicQuery
     def list_map
       @options[:per_page] = SiteSetting.location_map_max_topics
-      create_list(:map) do |topics|
+      create_list(:maps) do |topics|
         topics = topics.joins("INNER JOIN topic_custom_fields
                                ON topic_custom_fields.topic_id = topics.id
                                AND topic_custom_fields.name = 'has_geo_location'")
