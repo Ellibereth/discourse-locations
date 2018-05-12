@@ -18,7 +18,7 @@ Discourse.anonymous_top_menu_items.push(:map)
 Discourse.filters.push(:map)
 Discourse.anonymous_filters.push(:map)
 
-gem 'geocoder', '1.4.4'map
+gem 'geocoder', '1.4.4'
 
 after_initialize do
   Category.register_custom_field_type('location', :json)
