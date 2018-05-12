@@ -38,7 +38,7 @@ after_initialize do
   add_to_serializer(:basic_category, :location) { object.location }
   add_to_serializer(:basic_category, :location_enabled) { object.custom_fields['location_enabled'] }
   add_to_serializer(:basic_category, :location_topic_status) { object.custom_fields['location_topic_status'] }
-  add_to_serializer(:basic_category, :location_map_filter_closed) { object.custom_fields['location_map_filter_closed'] }
+  add_to_serializer(:basic_category, :location_map_filter_closed) { object.custom_fields['location_maps_filter_closed'] }
 
   Topic.register_custom_field_type('location', :json)
   Topic.register_custom_field_type('has_geo_location', :boolean)
