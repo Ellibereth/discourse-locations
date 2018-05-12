@@ -18,7 +18,7 @@ Discourse.anonymous_top_menu_items.push(:map)
 Discourse.filters.push(:map)
 Discourse.anonymous_filters.push(:map)
 
-gem 'geocoder', '1.4.4'
+gem 'geocoder', '1.4.4'map
 
 after_initialize do
   Category.register_custom_field_type('location', :json)
@@ -116,7 +116,7 @@ after_initialize do
   load File.expand_path('../lib/country.rb', __FILE__)
   load File.expand_path('../lib/geocode.rb', __FILE__)
   load File.expand_path('../lib/locations.rb', __FILE__)
-  load File.expand_path('../lib/map.rb', __FILE__)
+  load File.expand_path('../lib/maps.rb', __FILE__)
   load File.expand_path('../lib/users_map.rb', __FILE__)
   load File.expand_path('../controllers/geocode.rb', __FILE__)
 
