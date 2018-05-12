@@ -13,10 +13,10 @@ register_asset 'lib/leaflet/leaflet.markercluster.js'
 register_asset 'lib/leaflet/MarkerCluster.css'
 register_asset 'lib/leaflet/MarkerCluster.Default.css'
 
-Discourse.top_menu_items.push(:maps)
-Discourse.anonymous_top_menu_items.push(:maps)
-Discourse.filters.push(:maps)
-Discourse.anonymous_filters.push(:maps)
+Discourse.top_menu_items.push(:map)
+Discourse.anonymous_top_menu_items.push(:map)
+Discourse.filters.push(:map)
+Discourse.anonymous_filters.push(:map)
 
 gem 'geocoder', '1.4.4'
 
