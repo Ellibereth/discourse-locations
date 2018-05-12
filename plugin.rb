@@ -13,10 +13,10 @@ register_asset 'lib/leaflet/leaflet.markercluster.js'
 register_asset 'lib/leaflet/MarkerCluster.css'
 register_asset 'lib/leaflet/MarkerCluster.Default.css'
 
-Discourse.top_menu_items.push(:map)
-Discourse.anonymous_top_menu_items.push(:map)
-Discourse.filters.push(:map)
-Discourse.anonymous_filters.push(:map)
+Discourse.top_menu_items.push(:maps)
+Discourse.anonymous_top_menu_items.push(:maps)
+Discourse.filters.push(:maps)
+Discourse.anonymous_filters.push(:maps)
 
 gem 'geocoder', '1.4.4'
 
@@ -38,7 +38,7 @@ after_initialize do
   add_to_serializer(:basic_category, :location) { object.location }
   add_to_serializer(:basic_category, :location_enabled) { object.custom_fields['location_enabled'] }
   add_to_serializer(:basic_category, :location_topic_status) { object.custom_fields['location_topic_status'] }
-  add_to_serializer(:basic_category, :location_map_filter_closed) { object.custom_fields['location_maps_filter_closed'] }
+  add_to_serializer(:basic_category, :location_map_filter_closed) { object.custom_fields['location_map_filter_closed'] }
 
   Topic.register_custom_field_type('location', :json)
   Topic.register_custom_field_type('has_geo_location', :boolean)
