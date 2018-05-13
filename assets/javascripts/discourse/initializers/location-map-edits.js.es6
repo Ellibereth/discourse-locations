@@ -50,9 +50,9 @@ export default {
       if (Discourse.SiteSettings.location_hamburger_menu_map_link) {
         api.decorateWidget('hamburger-menu:generalLinks', () => {
           return {
-            route: 'discovery.map',
-            className: 'map-link',
-            label: 'filters.map.title'
+            route: 'discovery.maps',
+            className: 'maps-link',
+            label: 'filters.maps.title'
           }
         })
       }
