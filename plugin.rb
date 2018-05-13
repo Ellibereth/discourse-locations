@@ -15,7 +15,7 @@ register_asset 'lib/leaflet/MarkerCluster.Default.css'
 
 Discourse.top_menu_items.push(:map)
 Discourse.anonymous_top_menu_items.push(:map)
-Discourse.filters.push(:maps)
+Discourse.filters.push(:map)
 Discourse.anonymous_filters.push(:map)
 
 gem 'geocoder', '1.4.4'
